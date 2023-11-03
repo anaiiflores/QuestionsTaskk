@@ -71,10 +71,12 @@ public class MainActivity extends AppCompatActivity {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mNextButton.setEnabled(false);
                 mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
                 int question = mQuestionBank[mCurrentIndex].getmTextResId();
                 mQuestionTextView.setText(question);
                 updateQuestion();
+                //hacer que el boton sea invisible.
 
             }
         });
@@ -84,13 +86,18 @@ public class MainActivity extends AppCompatActivity {
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mBackButton.setEnabled(false);
+
                 mCurrentIndex = (mCurrentIndex - 1) % mQuestionBank.length;
                 int question = mQuestionBank[mCurrentIndex].getmTextResId();
                 mQuestionTextView.setText(question);
                 updateQuestion();
 
+
+
             }
         });
+
 
 
     }
